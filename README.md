@@ -1,5 +1,7 @@
 # Automate PKGBUILD testing with Docker
 
+thives: Renamed some folders to make it friendlier. aur-pkgbuild-tester goes into /usr/bin, and aur-pkgbuild-tester-scripts folder goes into /usr/lib/
+
 The script prepares a [Docker](https://docker.com) container where the process will run into, and accepts two arguments:
 
 1. Path of the **directory** containing the PKGBUILD
