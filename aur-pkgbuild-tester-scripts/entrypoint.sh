@@ -3,13 +3,13 @@ set -e
 # Create user
 useradd -m -g wheel -s /bin/sh tester
 echo "tester ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
-chown -R tester:wheel /opt/pkgdir
+chown -R tester:wheel /home/tester/pkgdir
 # Install makepkg deps
 pacman -Sy sudo binutils fakeroot --noconfirm
 # Build the package as `tester' user
-su - tester /opt/scripts/build-pkg.sh
+su - tester /home/tester/scripts/build-pkg.sh
 # Install the package
-cd /opt/pkgdir
+cd /home/tester/pkgdir
 pacman -U *.tar.xz --noconfirm
 # Run the test
-bash /opt/test.sh
+bash /home/tester/test.sh

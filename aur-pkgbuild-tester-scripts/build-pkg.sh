@@ -1,5 +1,5 @@
 #!/bin/bash
 set -e
-cd /opt/pkgdir
+cd /home/tester/pkgdir
 makepkg -fs --noconfirm
 

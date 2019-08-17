@@ -18,8 +18,8 @@ if [ -d "$TESTER" ]; then
     exit 1
 fi
 docker run --rm -it \
-    -v "$DATADIR/:~/pkgdir" \
-    -v "$TESTER:~/test.sh" \
-    -v "$SCRIPTSDIR/:~/scripts" \
+    -v "$DATADIR/:/home/tester/pkgdir" \
+    -v "$TESTER:/home/tester/test.sh" \
+    -v "$SCRIPTSDIR/:/home/tester/scripts" \
     archlinux/base \
     ~/entrypoint.sh
